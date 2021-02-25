@@ -1,5 +1,7 @@
 # demo-cronjob-operator
 
+live running codes of this project here: https://github.com/kubernetes-sigs/kubebuilder/tree/master/docs/book/src/cronjob-tutorial/testdata/project
+I just tried to recreate this project, still not finished.
 
 # Flow of this Project
 
