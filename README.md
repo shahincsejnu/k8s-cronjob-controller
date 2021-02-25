@@ -22,10 +22,20 @@
       If from inside your project or from `fish`, `kubebuilder` is not found then first do `export PATH=$PATH:/usr/local/kubebuilder/bin`
 - scaffold out this new project
     - `kubebuilder init --domain tutorial.kubebuilder.io`: we'll use a domain of tutorial.kubebuilder.io, so all API groups will be <group>.tutorial.kubebuilder.io.
-- Build Infrastructure:
-    - `go.mod`: A new Go module matching our project, with basic dependencies
-    - `Makefile`: Make targets for building and deploying your controller
-    - `PROJECT`: Kubebuilder metadata for scaffolding new components
-    - `config/manager`: launch your controllers as pods in the cluster
-    - `config/rbac`: permissions required to run your controllers under their own service account
-    - Kubebuilder scaffolds out the basic entrypoint of our project: `main.go`
+- `kubebuilder create api --group batch --version v1 --kind CronJob`: To scaffold out a new Kind and corresponding controller, we can use kubebuilder create api. The first time we call this command for each group-version, it will create a directory for the new group-version. Each time we call the command with a different kind, it’ll add a corresponding new file.
+
+
+
+## Build Infrastructure
+
+- `go.mod`: A new Go module matching our project, with basic dependencies
+- `Makefile`: Make targets for building and deploying your controller
+- `PROJECT`: Kubebuilder metadata for scaffolding new components
+- `config/manager`: launch your controllers as pods in the cluster
+- `config/rbac`: permissions required to run your controllers under their own service account
+- Kubebuilder scaffolds out the basic entrypoint of our project: `main.go`
+
+
+# Intuitions
+
+- We run our `manager`, which in turn runs all of our controllers and webhooks. The manager is set up to run until it receives a graceful shutdown signal. 
