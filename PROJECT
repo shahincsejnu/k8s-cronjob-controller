@@ -1,7 +1,3 @@
 domain: tutorial.kubebuilder.io
-repo: github.com/shahincsejnu/demo-cronjob-operator
-resources:
-- group: batch
-  kind: CronJob
-  version: v1
+repo: github.com/shahincsejnu/k8s-cronjob-controller
 version: "2"

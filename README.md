@@ -1,12 +1,18 @@
-# demo-cronjob-operator
+# k8s-cronjob-controller
 
-live running codes of this project here: https://github.com/kubernetes-sigs/kubebuilder/tree/master/docs/book/src/cronjob-tutorial/testdata/project
+- live running codes of this project here: https://github.com/kubernetes-sigs/kubebuilder/tree/master/docs/book/src/cronjob-tutorial/testdata/project
 I just tried to recreate this project, still not finished.
+- followed this [tutorial](https://book.kubebuilder.io/cronjob-tutorial/cronjob-tutorial.html)
+
+## Basics
+
+- The job of the CronJob controller is to run one-off tasks on the kubernetes cluster at regular intervals.
+- It does this by building on top of the Job controller, whose task is to run one-off tasks once, seeing them to completion.
 
 # Flow of this Project
 
 - `cd /home/sahadat/go/src/github.com/shahincsejnu/`
-- `mkdir demo-cronjob-operator`
+- `mkdir k8s-cronjob-controller`
 - `go mod init`
 - installed kubebuilder through commands (and also clone the kubebuilder repo and create the controller-gen binary)
     - ```shell script
